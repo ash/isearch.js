@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <script type="text/javascript" src="isearch.js"></script>
+        
+        <style>
+            * {font-family: Arial, sans-serif;}
+            th {font-weight: normal; background-color: #F5F5F5; text-align: left;}
+            td, th {padding: 0.3em 0.5em 1.3em 0.5em; font-size: 80%;}
+            form {margin: 0.5em 0 1em 0;}
+            input {width: 20em;}
+        </style>
+    </head>
+    <body>
+        <form>
+            <input id="FilterInput" placeholder="Search the table" />
+        </form>
+        
+        <table id="DataTable">
+            <thead>
+                <th>Country</th>
+                <th>Language</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Afghanistan</td>
+                    <td>Pashto, Dari</td>
+                </tr>
+                <tr>
+                    <td>Albania</td>
+                    <td>Albanian</td>
+                </tr>
+                <tr>
+                    <td>Algeria</td>
+                    <td>Arabic</td>
+                </tr>
+                <tr>
+                    <td>Andorra</td>
+                    <td>Catalan</td>
+                </tr>
+                <tr>
+                    <td>Angola</td>
+                    <td>Portuguese</td>
+                </tr>
+                <tr>
+                    <td>Antigua and Barbuda</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>Argentina</td>
+                    <td>Spanish</td>
+                </tr>
+                <tr>
+                    <td>Armenia</td>
+                    <td>Armenian</td>
+                </tr>
+                <tr>
+                    <td>Australia</td>
+                    <td>English</td>
+                </tr>
+                <tr>
+                    <td>Austria</td>
+                    <td>German</td>
+                </tr>
+                <tr>
+                    <td>Azerbaijan</td>
+                    <td>Azerbaijani</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <script>
+            new iSearch('DataTable', 'FilterInput');
+        </script>
+    </body>
+</html>
