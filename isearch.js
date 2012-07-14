@@ -5,11 +5,12 @@
 	https://github.com/ash/isearch.js
 */
 
-var KEY_LENGTH = 3;
 function iSearch(tableID, filterID) {
     this.Table = document.getElementById(tableID);
     this.Filter = document.getElementById(filterID);
 
+	this.keylength = 3;
+	
     if (!this.Table || !this.Filter) return null;
 
     this.Initialize();
@@ -67,7 +68,7 @@ iSearch.prototype.matchFilter = function() {
         for (var c = 0; c != words.length; c++) {
             if (words[c] == '') continue;
 
-            var key = words[c].substr(0, KEY_LENGTH);
+            var key = words[c].substr(0, this.keylength);
             if (this.iSearch.WordIndex[key]) {
                 var selected = this.iSearch.WordIndex[key];                
                 for (var s = 0; s != selected.length; s++)
@@ -75,7 +76,7 @@ iSearch.prototype.matchFilter = function() {
             }
         }
 
-        if (filterValue.length <= KEY_LENGTH) {
+        if (filterValue.length <= this.keylength) {
             for (var r = 0; r != search.RowsList.length; r++)
                 if (search.RowsList[r])
 					search.RowsList[r].style.display = selectedRows[r]
@@ -114,7 +115,7 @@ iSearch.prototype.indexText = function(rowIndex, text) {
 }
 
 iSearch.prototype.storeKey = function (rowIndex, key) {
-    for (var c = 1; c <= KEY_LENGTH; c++) {
+    for (var c = 1; c <= this.keylength; c++) {
         var subkey = key.substr(0, c);
 
         if (!this.WordIndex[subkey])
