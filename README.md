@@ -3,7 +3,7 @@ isearch.js
 
 JS-based incremental search through table fields.
 
-<script src="jsearch.js"></script>
+ <script src="jsearch.js"></script>
 
 <input id="FilterInput" placeholder="Search the table" />
 <table id="DataTable">
